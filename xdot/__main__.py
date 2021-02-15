@@ -18,9 +18,29 @@
 
 import argparse
 import sys
+import os
+import signal
+import re
 
 from .ui.window import DotWindow, Gtk
 
+def fireUrl(widget, url, obj):
+    # obj is event
+    # widget is the DotWidget
+    print(f"fireUrl {url} {widget}")
+
+    # gitk://reference
+    m = re.match("^gitk://(.*)", url)
+    if m is not None:
+        ref = m.group(1)
+        print(f"on ref {ref}")
+        os.posix_spawn("/usr/bin/gitk", ["--max-count=200", ref], os.environ)
+    # how to wait() on those children?
+    return True
+
+def child_handler(signum, frame):
+    print("child_handler")
+    os.waitpid(-1,0)
 
 def main():
 
@@ -73,6 +93,9 @@ Shortcuts:
 
     win = DotWindow(width=width, height=height)
     win.connect('delete-event', Gtk.main_quit)
+
+    win.dotwidget.connect('clicked', fireUrl)
+
     win.set_filter(options.filter)
     if inputfile and len(inputfile) >= 1:
         if inputfile == '-':
@@ -87,6 +110,7 @@ Shortcuts:
         # Reset KeyboardInterrupt SIGINT handler, so that glib loop can be stopped by it
         import signal
         signal.signal(signal.SIGINT, signal.SIG_DFL)
+        signal.signal(signal.SIGCHLD, child_handler)
 
     Gtk.main()
 

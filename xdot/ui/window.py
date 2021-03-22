@@ -392,7 +392,9 @@ class DotWidget(Gtk.DrawingArea):
             elif state & modifiers == Gdk.ModifierType.SHIFT_MASK:
                 return actions.ZoomAreaAction
             else:
+                # mmc: left click:
                 return actions.PanAction
+        # mmc: right click!
         return actions.NullAction
 
     def on_area_button_press(self, area, event):

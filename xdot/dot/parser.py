@@ -204,4 +204,3 @@ class DotParser(Parser):
 
     def handle_edge(self, src_id, dst_id, attrs):
         pass
-

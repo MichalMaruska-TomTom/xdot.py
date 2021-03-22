@@ -560,7 +560,11 @@ class Node(Element):
         self.y2 = y + 0.5*h
 
         self.url = url
+#        if url:
+#            print(f"Node still having url: {url}")
         self.tooltip = tooltip
+        if tooltip:
+            print(f"Node still having tooltip: {tooltip}")
 
     def is_inside(self, x, y):
         return self.x1 <= x and x <= self.x2 and self.y1 <= y and y <= self.y2

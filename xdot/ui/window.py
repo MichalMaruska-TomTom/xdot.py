@@ -423,6 +423,7 @@ class DotWidget(Gtk.DrawingArea):
             if event.button == 1:
                 url = self.get_url(x, y)
                 if url is not None:
+                    print(f"release on url {url.url}")
                     self.emit('clicked', url.url, event)
                 else:
                     jump = self.get_jump(x, y)

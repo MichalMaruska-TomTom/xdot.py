@@ -113,6 +113,7 @@ class NullAction(DragAction):
 class PanAction(DragAction):
 
     def start(self):
+        print("start")
         self.dot_widget.get_window().set_cursor(Gdk.Cursor(Gdk.CursorType.FLEUR))
 
     def drag(self, deltax, deltay):

@@ -509,6 +509,7 @@ class XDotParser(DotParser):
             url = None
         else:
             url = url.decode('utf-8')
+            # print(f"({id}) found URL {url}")
         node = elements.Node(id, x, y, w, h, shapes, url, attrs.get("tooltip"))
         self.node_by_name[id] = node
         if shapes:

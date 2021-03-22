@@ -80,12 +80,14 @@ class NullAction(DragAction):
         else:
             x, y, state = event.x, event.y, event.state
         dot_widget = self.dot_widget
+        # mmc:
         item = dot_widget.get_url(x, y)
         if item is None:
             item = dot_widget.get_jump(x, y)
         if item is not None:
             dot_widget.get_window().set_cursor(Gdk.Cursor(Gdk.CursorType.HAND2))
             dot_widget.set_highlight(item.highlight)
+            # mmc:?
             if item is not NullAction._tooltip_item:
                 # TODO: Should fold this into a method.
                 if isinstance(item, Jump) and item.item.tooltip is not None:
@@ -98,6 +100,7 @@ class NullAction(DragAction):
                 else:
                     NullAction._tooltip_window.hide()
                     NullAction._tooltip_label.set_markup("")
+
                 NullAction._tooltip_item = item
             if NullAction._tooltip_window.is_visible:
                 pointer = NullAction._tooltip_window.get_screen().get_root_window().get_pointer()

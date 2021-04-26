@@ -1,0 +1,35 @@
+.TH XDOT "1" "xdot 0.4" "User Commands"
+.SH NAME
+xdot \- Interactive viewer for Graphviz dot files
+.SH SYNOPSIS
+.B xdot
+.RI [ file ]
+.SH DESCRIPTION
+.P
+XDot is an interactive viewer for graphs written in Graphviz's dot
+language.
+.SH OPTIONS
+.TP
+\fB\-f\fR \fIFILTER\fR, \fB\-\-filter\fR=\fIFILTER\fR
+graphviz filter:
+.BR dot ", " neato ", " twopi ", " circo ", or " fdp
+.RB [default: " dot" ]
+.TP
+\fB\-n\fR, \fB\-\-no\-filter\fR
+assume input is already filtered into \fBxdot\fR format (use e.g.
+.BR "dot \-Txdot" )
+.TP
+\fB\-\-version\fR
+show program's version number and exit
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+show this help message and exit
+.SH "SEE ALSO"
+.BR dot (1),
+.BR neato (1),
+.BR twopi (1),
+.BR circo (1),
+.BR fdp (1)
+.SH AUTHOR
+This manpage was written for the Debian XDot package by Stefano Rivera
+<stefanor@debian.org>.

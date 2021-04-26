@@ -1,0 +1,40 @@
+Source: xdot
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Stefano Rivera <stefanor@debian.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-exec,
+ dh-python,
+ python3,
+ python3-setuptools
+Standards-Version: 4.5.1
+Homepage: https://github.com/jrfonseca/xdot.py
+Vcs-Git: https://salsa.debian.org/python-team/packages/xdot.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/xdot
+Rules-Requires-Root: no
+
+Package: xdot
+Architecture: all
+Depends:
+ gir1.2-gtk-3.0,
+ graphviz,
+ python3-gi,
+ python3-gi-cairo,
+ ${misc:Depends},
+ ${python3:Depends}
+Description: interactive viewer for Graphviz dot files
+ xdot is an interactive viewer for graphs written in Graphviz's dot language.
+ It uses internally the graphviz's xdot output format as an intermediate
+ format, and PyGTK and Cairo for rendering. xdot can be used either as a
+ standalone application from command line, or as a library embedded in your
+ Python 3 application.
+ .
+ Features:
+  * Since it doesn't use bitmaps it is fast and has a small memory footprint.
+  * Arbitrary zoom.
+  * Keyboard/mouse navigation.
+  * Supports events on the nodes with URLs.
+  * Animated jumping between nodes.
+  * Highlights node/edge under mouse.

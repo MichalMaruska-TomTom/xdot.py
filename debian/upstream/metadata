@@ -1,0 +1,8 @@
+---
+Bug-Database: https://github.com/jrfonseca/xdot.py/issues
+Bug-Submit: https://github.com/jrfonseca/xdot.py/issues/new
+Registry:
+ - Name: PyPI
+   Entry: xdot
+Repository: https://github.com/jrfonseca/xdot.py.git
+Repository-Browse: https://github.com/jrfonseca/xdot.py

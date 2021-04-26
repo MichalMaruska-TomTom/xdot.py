@@ -1,0 +1,3 @@
+#!/usr/bin/dh-exec
+debian/xdot.desktop /usr/share/applications/
+debian/xdot.py => /usr/bin/xdot

@@ -710,7 +710,8 @@ class DotWindow(Gtk.Window):
     def set_dotcode(self, dotcode, filename=None):
         if self.dotwidget.set_dotcode(dotcode, filename):
             self.update_title(filename)
-            self.dotwidget.zoom_to_fit()
+            self.dotwidget.zoom_image(1.0)
+            #self.dotwidget.zoom_to_fit()
 
     def set_xdotcode(self, xdotcode, filename=None):
         if self.dotwidget.set_xdotcode(xdotcode):

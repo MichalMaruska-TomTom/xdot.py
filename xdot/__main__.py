@@ -39,9 +39,9 @@ def fireUrl(widget, url, obj):
     return True
 
 def child_handler(signum, frame):
-    print("SIGCHLD received: child_handler. Wait to reap")
+    # print("SIGCHLD received: child_handler. Wait to reap")
     os.waitpid(-1,os.WNOHANG)
-    print("SIGCHLD received: indeed child_handler reaped!")
+    # print("SIGCHLD received: indeed child_handler reaped!")
 
 def main():
 

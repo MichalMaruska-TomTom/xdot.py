@@ -1,3 +1,428 @@
+xdot (1.3-maruska) unstable; urgency=medium
+
+  [ Jose.R.Fonseca ]
+  * Fix clicks.
+  * Fix clicks again.
+  * Fix ellipses.
+  * Simple example.
+  * Cleanup xdot parser.
+  * Separate widget from window.
+  * Use signals.
+  * Jump between nodes and edges.
+  * Add copyright header.
+  * Convert tabs to spaces.
+  * Fix return value on error.
+  * Adapt for pydot-1.0.2.
+  * Require pydot version 0.9.10.
+  * Remove trailing whitespace.
+  * Set executable flag.
+  * Fix HSV color parsing.
+  * Fix HSV color parsing to support space-separated values as well as comma-separated ones.
+  * Show unrecognized colors on stderr and use white instead of crashing.
+  * Properly support HSV colors (floats can start with a '.').
+  * When positioning the text vertically, use the coordinate for the baseline rather than absolute bottom of the text.  Unfortunately I couldn't figure out how to determine the descent of a font used by pango.Layout.
+  * Make text fit in boxes.
+  * Remove pointless move_to.
+  * Filled shapes are always outlined in dot (unless you specify the same color for the outline and the inside).
+  * Scale descender too.
+  * Handle line widths.
+  * Support dashing.
+  * Handle style="solid".
+  * Ignore invalid colors instead of assuming white.
+  * Animate scrolling when you click on a node/edge.
+  * Zoom out while moving a large distance.
+  * Stop the animation if I start clicking or dragging the mouse.
+  * Never zoom in during animation.
+  * Fix unit mismatch in comparison.
+  * Distinguish clicks from drags.
+  * I wonder if there's a better solution?
+  * Ctrl-dragging zooms.
+  * Fix space conversion formula.
+  * Avoid division by zero.
+  * Shift-dragging zooms an area.
+  * Escape or a different mouse button aborts the current drag action.
+  * Change the cursor when you're over a jump point.
+  * Highlight the node under mouse.
+  * Highlight all kinds of objects.
+  * Associate nodes to edges.
+  * Highlight the destination of the edge too.
+  * Gentler highlight color.
+  * Add an open command to the toolbar.
+  * Add error dialogs when a file cannot be parsed.
+  * Show the file name in the window title.
+  * Fix error dialog title.
+  * Add some margin to zoom to fit.
+  * Zoom-to-fit on open.
+  * Make zoom-to-fit sticky.
+  * Allow to specify the graphviz filter.
+  * Fix library usage broken due to the global options.
+  * Handle polylines. Handle ports in nodes.
+  * Import pyparsing-1.5.0.
+  * Fix error handling when you open an invalid file.
+  * Make mouse wheel zoom around the mouse cursor rather than center of window.
+  * Replace pydot and pyparsing by a much faster hand written lexer and parser.
+  * Ignore empty bb attribute inside subgraphs.
+  * Show an error message dialog when failing to open the input file.
+  * Check for unicode (from Jaap Karssenberg).
+  * Check subprocess returncode (by Jaap Karssenberg).
+  * Support filled bezier shape.
+  * Workaround broken pangocairo bindings.
+  * Begin to separate the xdot attribute parsing from the handling code.
+  * Fix typo.
+  * Fix another typo.
+  * Fix typo (arpad.zsuzsi).
+  * Fix yet another typo.
+  * Fix filled ellipses.
+  * Parse subgraphs correctly.
+  * Reloads the file on the 'r' key (based on peterbjorgensen's patch).
+  * Accept floating bounding box (by Krzysztof.Goj).
+  * Add setup script (Marius Gedminas, issue #19).
+  * Add support for ColorBrewer Color Schemes.
+  * Automatically reloads open file when it changes (Robert Meerman).
+  * Use gobject.timeout_add.
+  * Properly handle motion-notify-event (from lodatom).
+  * Add reload button.
+
+  [ José Fonseca ]
+  * Quit key binding (by sk, issue #30).
+
+  [ Hartmut Goebel ]
+  * Fixed: Nodes in dor-file may not have width/height.
+
+  [ Alberto González Rodríguez ]
+  * Support images.
+
+  [ José Fonseca ]
+  * Show dotted lines in xdot (by djs52uk, issue 50).
+  * Always print the error to stderr (issue 46).
+  * Accept +/- to zoom in and out (mgedmin, issue 49)
+  * Add a --no-filter option (mgedmin, issue 48)
+  * Add .gitignore.
+  * Handle empy graph without crashing (issue 60).
+  * Fix slash quoting (issue 61).
+
+  [ F.Kirchner ]
+  * Enhanced auto-refresh functionnality.
+
+  [ José Fonseca ]
+  * Read stdin automatically when it's not a tty.
+  * Add a few tests.
+
+  [ ludw1g.m3i3r ]
+  * Adding printing support.
+
+  [ José Fonseca ]
+  * Remove version number.
+  * Bump version number.
+  * Add a comment on how to upload the package to PyPI.
+  * Constrain zoom ratio to a sane range to prevent numeric instability (issue #13).
+  * Note on uploading to pipy (issue #71)
+
+  [ corentin.labbe ]
+  * Use python 3 / 2.6 exception syntax.
+
+  [ Salva ]
+  * xdot: add support for text based node search
+
+  [ ludw1g.m3i3r ]
+  * Enhance text search and move searchbox to toolbox
+
+  [ Salva ]
+  * Added a "F" keyboard shortcut to reach easily the search box.
+
+  [ José Fonseca ]
+  * Document shortcuts (issue 78).
+  * Cleanup text search.
+  * Minor cleanup.
+  * Ignore more setup.py generated dirs.
+  * Add README.
+  * Refer to example.py instead of duplicating the code.
+  * Update images links.
+  * Update status.
+  * Cleanup readme.
+
+  [ Paul Sokolovsky ]
+  * Open files in a current dir by default, and preserve last dir.
+  * Record id in the Node. Add __repr__() for both Node and Edge.
+  * Consistently implement is_inside() method (i.e. add impl for Edge).
+  * Implement get_element(x, y) method for Graph & Widget.
+  * Shift+click led to division by 0, use it for zoom out now.
+
+  [ José Fonseca ]
+  * Zoom instead.
+  * Drop changelog.
+
+  [ Paul Sokolovsky ]
+  * Allow to override event processing of DotWidget.
+
+  [ José Fonseca ]
+  * Link to forks page.
+  * Recognize this is not my sole project.
+  * Remove print statement.
+  * Support more precision in coordinates (from xdot version 1.3).
+  * Warn about gradient colors (introduced in xdot version 1.4).
+  * Parse new 't' opcode for font characteristics (from xdot version 1.5)
+  * Check xdotversion attribute.
+  * Bump version number.
+  * Update homepage URL.
+
+  [ ehoo ]
+  * Handle OSError exception when invoking 'dot'.
+
+  [ José Fonseca ]
+  * Remove spurious variable.
+
+  [ Dov Feldstern ]
+  * README: 'sample.py', not 'example.py'
+
+  [ Stefano Rivera ]
+  * Support xdot format 1.7
+
+  [ José Fonseca ]
+  * Revert "Read stdin automatically when it's not a tty."
+
+  [ Emilien Kofman ]
+  * Add underlined/bolded/italic/superscripted/subscripted text.
+
+  [ Christian Hattemer ]
+  * Avoid printing a blank line when there was no error.
+
+  [ Jose Fonseca ]
+  * Use pango markup.
+
+  [ Timo Vanwynsberghe ]
+  * Port to GTK3.
+  * Fixed cairo.FontOptions error on older PyGObject versions.
+  * Improved textlayout creation.
+
+  [ Jose Fonseca ]
+  * Add a test for unicode.
+  * Minor tweaks in antecipation for Python 3 migration.
+  * Simple test script.
+  * Apply 2to3.
+  * Parse xdot with bytes, not unicode strings.
+  * Update instructions.
+  * Don't choke on radial color gradients.
+  * Make test script more robust.
+  * Update Google Code URLs.
+  * Prevent infinite loop on incomplete files.
+  * tests: Import Graphviz tests.
+  * Don't show modal dialogs when testing.
+  * travis: Travis integration.
+  * Update apt-get command line.
+  * Bump version.
+
+  [ Steven Allen ]
+  * Assert required versions of gi libraries.
+  * Don't cancel timers twice.
+
+  [ Jose Fonseca ]
+  * Assert required versions of gi libraries for test script too.
+
+  [ Steven Allen ]
+  * Pipe errors through to DotWindow from DotWidget.
+  * Set parent window for dialogs.
+
+  [ Dan Fandrich ]
+  * Added -g option to set default window size.
+
+  [ Mickaël Salaün ]
+  * Search in nodes and edges as well
+  * Ignore cursor highlight while searching
+
+  [ Owen Stephens ]
+  * When highlighting a node, also highlight its edges
+
+  [ Jose Fonseca ]
+  * Minor updates to the README.
+  * Add PyPi classifiers.
+  * Update install_requires comment.
+  * Update PyPy homepage URL.
+
+  [ Peter Hill ]
+  * Cleaner splitting into separate modules
+  * Fix most flake8 errors
+  * Make internal imports more explicit
+  * Move lookup_color into ui.colours
+  * Fix British spelling of "colour"
+  * Switch to argparse instead of optparse
+
+  [ Jose Fonseca ]
+  * Add copy of LGPLv3 license.
+
+  [ Marek Rusinowski ]
+  * Fix emiting clicked signal with url as bytes.
+
+  [ Pierre Lestringant ]
+  * Fix missing subdirectories to build package.
+
+  [ Jose Fonseca ]
+  * Don't mask away exceptions when testing.
+  * Don't decode missing URLs.
+  * Run tests in parallel with multiprocessing.
+
+  [ Mike Kazantsev ]
+  * Restore default SIGINT handler so that xdot terminates on Ctrl-C.
+
+  [ Jakub Wilk ]
+  * Fix typos in README
+
+  [ Jose Fonseca ]
+  * Assert only Python 3 is used.
+  * travis: Automatically upload releases to PyPI.
+  * Bump version to 0.8.
+  * travis: Change password.
+  * travis: Skip deploy cleanup and doc upload.
+  * travis: Return to top dir before deployment.
+  * Update README URLs.
+  * Ensure DOT files are read and passed as bytes.
+  * travis: Revert to deprecated environment.
+  * travis: Switch to generic language.
+  * Update setup comments.
+  * Prevent AttributeError when processing Popen exceptions.
+  * Document how to invoke xdot from the source tree.
+  * Don't clobber openfilename when reloading.
+  * Bump version to 0.9.
+  * Add twine package.
+
+  [ Balló György ]
+  * Don't check for graphviz python module
+
+  [ Benjamin Redelings ]
+  * Don't recenter when we reload a file.
+
+  [ Jonas Hörsch ]
+  * Fix reading dot graphs from standard input (fixes #60)
+
+  [ Jose Fonseca ]
+  * Bump to version 1.0
+
+  [ astian ]
+  * xdot: Use theme background on DotWidget.
+
+  [ iamahuman ]
+  * Faster rendering of large graphs
+
+  [ Jose Fonseca ]
+  * Fix sample.
+  * Update standard input instructions.
+  * Treat subgraphs as nodes.
+  * travis: Upgrade to Xenial.
+  * Add test for issue 69.
+
+  [ iamahuman ]
+  * History support
+
+  [ Tal Ben-Nun ]
+  * Support "outputorder" attribute when drawing.
+
+  [ Jose Fonseca ]
+  * Bump to version 1.1.
+  * Fix identation.
+  * Add consume method call.
+  * travis: Upgrade to Ubuntu 19.04.
+
+  [ Jed Liu ]
+  * Ignore OSErrors when updating view
+
+  [ Moritz Meier ]
+  * Add toggle-toolbar feature and hide-toolbar commandline parameter.
+
+  [ Jose Fonseca ]
+  * Add test for issue 71.
+
+  [ notEvil ]
+  * Add support for tooltips.
+  * Edge highlight along curve (#82)
+
+  [ Jose Fonseca ]
+  * Add some FIXME/TODO remarks.
+
+  [ Christian Hattemer ]
+  * Handle multiple search results
+
+  [ Arthur A. Gleckler ]
+  * Pressing RET with no search text cancels focus.
+
+  [ Jose Fonseca ]
+  * github: Migrate from Travis CI to GitHub Actions.
+  * Bump to version 1.2.
+  * github: build source distribution.
+  * github: Add missing python3-setuptools dependency.
+  * github: Build on pull requests.
+
+  [ John Vandenberg ]
+  * Use Gtk.Window.new
+
+  [ Jose Fonseca ]
+  * Update docs for NumPy dependency.
+  * Provide more helpful error message when gi import fails.
+
+  [ mxmgh ]
+  * Implement smooth zooming
+
+  [ Jose Fonseca ]
+  * github: Use twine directly.
+  * List numpy as required dependency.
+  * Ignore empty nodes, when a proper node already exists.
+  * Handle xdot backslashes correctly.
+
+  [ Arthur A. Gleckler ]
+  * Fix WM_CLASS.
+
+  [ Jan Tojnar ]
+  * Fix tooltip on Wayland
+  * Support gv extensions in file chooser
+
+  [ Meier, Moritz ]
+  * Introduce "Export to other format" feature
+  * Set PNG to default export format and add more formats
+
+  [ Pietro Fezzardi ]
+  * Remove unnecessary max_length from text search.
+
+  [ Arthur A. Gleckler ]
+  * Bind "W" key to zoom_to_fit.
+
+  [ Costa Shulyupin ]
+  * return xdotcode anyway
+
+  [ Moritz Meier ]
+  * Add tooltips to various toolbar buttons.
+
+  [ Jose Fonseca ]
+  * github-actions: Test both on Ubuntu 20.04 and 22.04.
+  * Allow to use xdot.dot headlessly.
+  * Split XDotParser into ui.
+  * Leverage PEP 562 for backwards compatibility.
+
+  [ Philipp A ]
+  * Keep XDotParser importable from old location
+
+  [ Thomas L. Kjeldsen ]
+  * Minor bugfix for empty search
+
+  [ salah ]
+  * Use GObject.SignalFlags.RUN_LAST instead of GObject.SIGNAL_RUN_LAST
+  * Add argument name to Gtk.Window.new()
+
+  [ Michal Maruska ]
+  * Provide handler for "clicked" action -- handle gitk:// URL
+  * debian: import from 1.2
+  * Verbose: parser when encouteres URL, Action when starts, chain on click
+  * comments
+  * tooltips?
+  * Improve the signal-handler output
+  * Don't hang on waiting on child reaped
+  * Don't zoom-fit at start, but use 100%
+  * Useless --- don't zoom-fit at start, but use 100%
+  * change the initial zoom?
+  * stop reporting the CHILD signal handling
+  * Show tooltips more generally
+  * Hide the tooltips whenever focus is lost
+
+ -- Michal Maruska <mmaruska@gmail.com>  Mon, 19 Dec 2022 01:40:38 +0100
+
 xdot (1.2-1) unstable; urgency=low
 
   [ Stefano Rivera ]

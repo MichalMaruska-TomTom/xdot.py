@@ -91,7 +91,8 @@ class NullAction(DragAction):
             # mmc:?
             if item is not NullAction._tooltip_item:
                 # TODO: Should fold this into a method.
-                if isinstance(item, Jump) and item.item.tooltip is not None:
+                # mmc: isinstance(item, Jump) and
+                if item.item.tooltip is not None:
                     NullAction._tooltip_label.set_markup(item.item.tooltip.decode())
                     NullAction._tooltip_window.resize(
                       NullAction._tooltip_label.get_preferred_width().natural_width,

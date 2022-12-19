@@ -31,6 +31,10 @@ class DragAction(object):
         self.startmousey = self.prevmousey = event.y
         self.start()
 
+    def on_unmap_notify(self, event):
+        # do nothing
+        pass
+
     def on_motion_notify(self, event):
         if event.is_hint:
             window, x, y, state = event.window.get_device_position(event.device)
@@ -73,6 +77,9 @@ class NullAction(DragAction):
 
     _tooltip_window.add(_tooltip_label)
     _tooltip_label.show()
+
+    def on_unmap_notify(self, event):
+        NullAction._tooltip_window.hide()
 
     def on_motion_notify(self, event):
         if event.is_hint:

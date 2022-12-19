@@ -80,6 +80,8 @@ class DotWidget(Gtk.DrawingArea):
         self.connect("scroll-event", self.on_area_scroll_event)
         self.connect("size-allocate", self.on_area_size_allocate)
 
+        self.connect("focus-out-event", self.on_unmap)
+        #self.connect("focus-in-event", self.on_unmap)
         self.connect('key-press-event', self.on_key_press_event)
         self.last_mtime = None
 
@@ -469,6 +471,11 @@ class DotWidget(Gtk.DrawingArea):
     def on_area_motion_notify(self, area, event):
         self.drag_action.on_motion_notify(event)
         return True
+
+    def on_unmap(self, area, event):
+        self.drag_action.on_unmap_notify(event)
+        return True
+
 
     def on_area_size_allocate(self, area, allocation):
         if self.zoom_to_fit_on_resize:
